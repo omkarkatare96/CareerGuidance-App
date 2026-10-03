@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 220 30% 98%;
+    --foreground: 220 25% 15%;
+    --card: 220 30% 100%;
+    --card-foreground: 220 25% 15%;
+    --popover: 220 30% 100%;
+    --popover-foreground: 220 25% 15%;
+    --primary: 220 65% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 30% 94%;
+    --secondary-foreground: 220 25% 15%;
+    --muted: 220 20% 95%;
+    --muted-foreground: 220 15% 45%;
+    --accent: 175 45% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 220 65% 55%;
+    --chart-1: 220 65% 55%;
+    --chart-2: 175 45% 50%;
+    --chart-3: 260 40% 60%;
+    --chart-4: 35 80% 60%;
+    --chart-5: 340 60% 60%;
+    --radius: 0.75rem;
+    --sidebar-background: 220 30% 98%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 220 65% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 95%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 220 20% 90%;
+    --sidebar-ring: 220 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 4s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
